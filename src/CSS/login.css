@@ -1,23 +1,22 @@
 body {
-  background-color: #4F4F4F;
   align-items: center;
+  background-color: #4f4f4f;
   display: flex;
   justify-content: center;
-
 }
+
 img {
   margin-top: 15px;
   width: 100px;
 }
-.box {
 
-  width: 438px;
+.box {
   height: 528px;
+  width: 438px;
+  background: #ffffff;
   text-align: center;
-  background: #FFFFFF;
   border-radius: 22px;
   margin-top: 50px;
-  
 }
 
 .label {
@@ -25,33 +24,29 @@ img {
 }
 
 .input {
-
-  width: 299px;
+  background: #2ec18b;
   height: 47px;
-  
-  background: #2EC18B;
+  width: 299px;
   border-radius: 9px;
-  margin-top: 30px;
   border: none;
+  margin-top: 30px;
   text-align: center;
-  text-decoration: #036B52;
   font-size: 15px;
+  text-decoration: #036b52;
 }
 
 .button {
-
-  width: 231px;
+  background: #2ec18b;
   height: 63px;
-
-  background: #2EC18B;
+  width: 231px;
   border: solid;
   border-radius: 18px;
   margin-top: 25px;
-  text-align: center;
   font-size: 15px;
+  text-align: center;
 }
 
 .title {
-  color: #036B52;
+  color: #036b52;
   font-family: inherit;
-}   
+}

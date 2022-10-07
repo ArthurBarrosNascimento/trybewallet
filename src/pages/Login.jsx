@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { userAction } from '../redux/actions';
-import '../CSS/login.css';
+// import '../CSS/login.css';
 
 const MIN_PASSWORD = 5;
 

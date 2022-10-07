@@ -11,12 +11,12 @@ img {
 }
 
 .box {
-  height: 528px;
-  background: #fff;
+  background: white;
   border-radius: 22px;
-  width: 438px;
-  text-align: center;
   margin-top: 50px;
+  text-align: center;
+  height: 528px;
+  width: 438px;
 }
 
 .label {
@@ -25,22 +25,22 @@ img {
 
 .input {
   background: #2ec18b;
-  height: 47px;
-  width: 299px;
   border: none;
   border-radius: 9px;
   margin-top: 30px;
   font-size: 15px;
   text-align: center;
   text-decoration: #036b52;
+  height: 47px;
+  width: 299px;
 }
 
 .button {
   background: #2ec18b;
-  height: 63px;
   border: solid;
-  width: 231px;
   border-radius: 18px;
+  height: 63px;
+  width: 231px;
   font-size: 15px;
   margin-top: 25px;
   text-align: center;

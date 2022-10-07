@@ -12,10 +12,10 @@ img {
 
 .box {
   height: 528px;
-  width: 438px;
-  background: #ffffff;
-  text-align: center;
+  background: #fff;
   border-radius: 22px;
+  width: 438px;
+  text-align: center;
   margin-top: 50px;
 }
 
@@ -27,22 +27,22 @@ img {
   background: #2ec18b;
   height: 47px;
   width: 299px;
-  border-radius: 9px;
   border: none;
+  border-radius: 9px;
   margin-top: 30px;
-  text-align: center;
   font-size: 15px;
+  text-align: center;
   text-decoration: #036b52;
 }
 
 .button {
   background: #2ec18b;
   height: 63px;
-  width: 231px;
   border: solid;
+  width: 231px;
   border-radius: 18px;
-  margin-top: 25px;
   font-size: 15px;
+  margin-top: 25px;
   text-align: center;
 }
 

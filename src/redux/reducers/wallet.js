@@ -8,16 +8,17 @@ const INITIAL_STATE = {
   idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
 };
 
-function walletReducer(state = INITIAL_STATE, action) {
-  switch (action.type) {
+function walletReducer(state = INITIAL_STATE, { type, payload }) {
+  switch (type) {
   case ACTION_COIN:
     return {
-      currencies: action.payload,
+      ...state,
+      currencies: payload,
     };
   case ACTION_EXPENSES:
     return {
       ...state,
-      expenses: [...state.expenses, action.payload],
+      expenses: [...state.expenses, payload],
     };
 
   default:

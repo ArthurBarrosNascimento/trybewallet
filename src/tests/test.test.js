@@ -4,8 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 import App from '../App';
 
-describe('Testando App TrybeWallet', () => {
-  it('Testando Login Page.', () => {
+describe('Test App TrybeWallet', () => {
+  it('Test Login Page.', () => {
     const { history } = renderWithRouterAndRedux(<App />);
 
     const inputEmail = screen.getByPlaceholderText('Type a Email');
@@ -24,7 +24,26 @@ describe('Testando App TrybeWallet', () => {
     expect(pathname).toBe('/carteira');
   });
 
-  it('Testando Wallet Page', async () => {
+  it('Test add expences and remove expenses', async () => {
     renderWithRouterAndRedux(<App />, { initialEntries: ['/carteira'] });
+
+    const inputText = screen.getByPlaceholderText(/Type a Description/i);
+    const btn = screen.getByRole('button', {
+      name: /adicionar despesa/i,
+    });
+    const inputValue = screen.getByPlaceholderText(/Type a value/i);
+
+    userEvent.type(inputText, '5 Dólares');
+    userEvent.type(inputValue, '5');
+    userEvent.click(btn);
+    userEvent.click(btn);
+
+    const buttonRemove = await screen.findAllByTestId('delete-btn');
+
+    expect(buttonRemove[0]).toBeInTheDocument();
+
+    userEvent.click(buttonRemove[0]);
+
+    expect(buttonRemove[0]).not.toBeInTheDocument();
   });
 });

@@ -4,6 +4,7 @@ import { currincesApi, requestApi } from '../services/coinsApi';
 export const ACTION_USER = 'USER';
 export const ACTION_COIN = 'COIN';
 export const ACTION_EXPENSES = 'EXPENSES';
+export const ACTION_DELETE = 'DELETE';
 
 export const userAction = (payload) => ({
   type: ACTION_USER,
@@ -17,6 +18,11 @@ export const coinApiAction = (payload) => ({
 
 export const AddExpenseApiAction = (payload) => ({
   type: ACTION_EXPENSES,
+  payload,
+});
+
+export const DeleteExpense = (payload) => ({
+  type: ACTION_DELETE,
   payload,
 });
 

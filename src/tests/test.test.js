@@ -23,4 +23,8 @@ describe('Testando App TrybeWallet', () => {
     const { pathname } = history.location;
     expect(pathname).toBe('/carteira');
   });
+
+  it('Testando Wallet Page', async () => {
+    renderWithRouterAndRedux(<App />, { initialEntries: ['/carteira'] });
+  });
 });

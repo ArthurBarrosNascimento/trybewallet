@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { DeleteExpense } from '../redux/actions';
 
 class Table extends Component {
   convertCambio = (ask) => {
@@ -11,6 +12,14 @@ class Table extends Component {
   valueConvertido = (value, ask) => {
     const result = Number(value) * Number(ask);
     return Number(result).toFixed(2);
+  };
+
+  DeleteExpensesById = (value) => {
+    const { expenses, dispatch } = this.props;
+
+    const result = expenses.filter((exp) => exp.id !== value);
+
+    dispatch(DeleteExpense(result));
   };
 
   render() {
@@ -44,6 +53,16 @@ class Table extends Component {
                 <td>{this.convertCambio(e.exchangeRates[e.currency].ask)}</td>
                 <td>{this.valueConvertido(e.value, e.exchangeRates[e.currency].ask)}</td>
                 <td>Real</td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={ () => this.DeleteExpensesById(e.id) }
+                    data-testid="delete-btn"
+                  >
+                    Excluir
+
+                  </button>
+                </td>
               </tr>
             ))
           }
@@ -54,7 +73,9 @@ class Table extends Component {
 }
 
 Table.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   expenses: PropTypes.shape({
+    filter: PropTypes.func,
     map: PropTypes.func.isRequired,
   }).isRequired,
 };
